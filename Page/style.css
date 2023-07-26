@@ -79,18 +79,37 @@ aside .sounds {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: clamp(8rem, 10rem + 10vw, 16rem);
   padding: 4.8rem;
   border-radius: 2.4rem;
   background-color: var(--light-mode-100);
 }
 
-.sounds input {
-  margin-top: 3.2rem;
+div.sound {
+  height: 15.2rem;
+  padding: 2.4rem;
+}
+
+.sound svg {
+  margin-bottom: 3.2rem;
 }
 
 .sound svg path {
   transition: .3s;
+}
+
+.sounds input[type="range"] {
+  max-width: 10rem;
+  height: .4rem;
+  position: absolute;
+  bottom: 3rem;
+  
+  appearance: none;
+  border-radius: .5rem;
+
+  background-color: var(--light-mode-900);
+  accent-color: var(--light-mode-900);
 }
 
 .sound:hover, .sound.active {
@@ -99,6 +118,11 @@ aside .sounds {
 
 .sound:hover svg path , .sound.active svg path {
   fill: #E1E1E6;
+}
+
+.sound:hover input, .sound.active input{
+  background-color: var(--light-mode-100);
+  accent-color: var(--light-mode-100);
 }
 
 @media (min-width: 1027px) {
