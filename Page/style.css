@@ -1,0 +1,113 @@
+:root {
+  font-size: 62.5%;
+  
+  --base-color: 194;
+  
+  /* light-mode */
+  --light-mode-50: #FFF;
+  --light-mode-100: #E1E1E6;
+  --light-mode-900: #323238;
+  --light-card: hsla(var(--base-color), 97%, 31%, 1);
+  /* Dark-mode */
+  --dark-mode-50: #FFF; 
+  --dark-mode-100: #C4C4CC;
+  --dark-mode-900: #121214;
+  --dark-card: hsla(195, 74%, 15%, 1)
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+
+i {
+  cursor: pointer;
+}
+
+.page {
+  justify-self: center;
+  align-self: center;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+main .timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  
+  font-size: 7rem;
+}
+
+main .timer-controls {
+  display: flex;
+  gap: clamp(1rem, 2rem + 10vw, 3rem);
+}
+
+aside .sounds {
+  padding: 1rem;
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sounds div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: clamp(8rem, 10rem + 10vw, 16rem);
+  padding: 4.8rem;
+  border-radius: 2.4rem;
+  background-color: var(--light-mode-100);
+}
+
+.sounds input {
+  margin-top: 3.2rem;
+}
+
+.sound svg path {
+  transition: .3s;
+}
+
+.sound:hover, .sound.active {
+  background: #02799D;
+}
+
+.sound:hover svg path , .sound.active svg path {
+  fill: #E1E1E6;
+}
+
+@media (min-width: 1027px) {
+  .page {
+    flex-direction: row;
+    gap: 19rem;
+  }
+
+  main .timer {
+    font-size: 12rem;
+  }
+}
